@@ -1,6 +1,10 @@
 package com.jojo.finace
 
 import android.app.Application
+import com.jojo.finace.constants.Constants
+import com.orhanobut.logger.AndroidLogAdapter
+import com.orhanobut.logger.Logger
+import com.orhanobut.logger.PrettyFormatStrategy
 import com.squareup.leakcanary.LeakCanary
 
 /**
@@ -19,5 +23,15 @@ class BaseApp : Application() {
             return
         }
         LeakCanary.install(this)
+        val formatStrategy = PrettyFormatStrategy.newBuilder()
+                .tag(Constants.BASE_TAG)
+                .build()
+        val adapter: AndroidLogAdapter = object : AndroidLogAdapter(formatStrategy) {
+            override fun isLoggable(priority: Int, tag: String?): Boolean {
+                return Constants.IS_DEBUG
+            }
+        }
+        Logger.addLogAdapter(adapter)
+        Logger.d(Constants.BASE_TAG)
     }
 }
