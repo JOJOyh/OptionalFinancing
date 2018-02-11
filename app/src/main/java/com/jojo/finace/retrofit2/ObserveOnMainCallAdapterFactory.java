@@ -1,4 +1,4 @@
-package com.jojo.finace.retrofit;
+package com.jojo.finace.retrofit2;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;

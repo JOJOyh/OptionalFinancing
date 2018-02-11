@@ -10,4 +10,5 @@ package com.jojo.finace.constants
 object Constants {
     val BASE_TAG = "jojo"
     val IS_DEBUG = true
+    val SINA_FUND_BASE_URL = "http://hq.sinajs.cn"
 }
