@@ -32,6 +32,5 @@ class BaseApp : Application() {
             }
         }
         Logger.addLogAdapter(adapter)
-        Logger.d(Constants.BASE_TAG)
     }
 }
